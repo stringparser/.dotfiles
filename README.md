@@ -39,10 +39,7 @@ And add the alias to your bashrc/zshrc file
 alias config="/usr/bin/git --git-dir=$HOME/code/dotfiles --work-tree=$HOME"
 ```
 
-> Initial technique to store dot files found here:
->
-> [https://news.ycombinator.com/item?id=11070797](https://news.ycombinator.com/item?id=11070797)
->
-> More elaborate blog post here:
->
-> [https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+Reference links:
+- [https://github.com/dvidelabs/config](https://github.com/dvidelabs/config)
+- [https://news.ycombinator.com/item?id=11070797](https://news.ycombinator.com/item?id=11070797)
+- [https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
