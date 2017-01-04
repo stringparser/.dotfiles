@@ -1,9 +1,36 @@
-# dot files setup
+# setup
 
-The idea is really simple. Instead of using symlinks (in order to keep files versioned from one folder) you can create a bare repo where you need to and use that bare repo to dotfiles. Then we also can set up an alias to use git directly from that repository adding files from wherever they need to be added.
+The idea is really simple.
 
-Initial technique to store dot files found here:
-[https://news.ycombinator.com/item?id=11070797](https://news.ycombinator.com/item?id=11070797)
+Instead of using symlinks (in order to keep files versioned from one folder) you can create a bare repo to track the dotfiles.
 
-More elaborate blog post here:
-[https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+```sh
+git init --bare $HOME/code/dotfiles
+```
+
+Then you can also can set up an alias to use git directly from that repository.
+
+```sh
+echo 'alias config="/usr/bin/git --git-dir=$HOME/code/dotfiles --work-tree=$HOME"' >> $HOME/.zshrc
+```
+
+Refresh, or open a new terminal, and you can use that repo to track files across your system.
+
+```sh
+config add .eslintrc
+config add .zshrc
+```
+
+There are some usage caveats (like path completion) you might also want to disable showing untracked files.
+
+```sh
+config config --local status.showUntrackedFiles no
+```
+
+> Initial technique to store dot files found here:
+>
+> [https://news.ycombinator.com/item?id=11070797](https://news.ycombinator.com/item?id=11070797)
+>
+> More elaborate blog post here:
+>
+> [https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
