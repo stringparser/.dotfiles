@@ -1,1 +1,0 @@
-/Users/stringparser/.vim/vimrc
