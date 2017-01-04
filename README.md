@@ -8,13 +8,13 @@ Instead of using symlinks (in order to keep files versioned from one folder) you
 git init --bare $HOME/code/dotfiles
 ```
 
-Then you can also can set up an alias to use git directly from that repository.
+Then you can setup an alias to use git directly from that repository.
 
 ```sh
 echo 'alias config="/usr/bin/git --git-dir=$HOME/code/dotfiles --work-tree=$HOME"' >> $HOME/.zshrc
 ```
 
-Refresh, or open a new terminal, and you can use that repo to track files across your system.
+That's it. Then refresh, or open a new terminal, and you can use that repo to track files across your system.
 
 ```sh
 config add .eslintrc
@@ -25,6 +25,18 @@ There are some usage caveats (like path completion) you might also want to disab
 
 ```sh
 config config --local status.showUntrackedFiles no
+```
+
+If you want to use the files listed here do
+
+```sh
+git clone https://github.com/stringparser/dotfiles.git code/dotfiles
+```
+
+And add the alias to your bashrc/zshrc file
+
+```sh
+alias config="/usr/bin/git --git-dir=$HOME/code/dotfiles --work-tree=$HOME"
 ```
 
 > Initial technique to store dot files found here:
