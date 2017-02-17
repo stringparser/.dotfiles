@@ -14,6 +14,7 @@ plugins=(git nvm osx)
 # augment PATH
 PATH="$PATH:/usr/local/bin"
 
+# when Android
 if [[ -d "$HOME/Library/Android" ]]; then
   PATH="$PATH:$HOME/Library/Android/sdk/tools"
   PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
@@ -27,9 +28,8 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 RPROMPT='$(whoami) %{$fg_bold[green]%}node-$(node -v)%{$reset_color%}'
 
 # aliases
+alias dot='/usr/bin/git --git-dir=$HOME/code/dotfiles --work-tree=$HOME'
 alias gulp='node $(find . -name "gulpfile.js" -not -path "./node_modules/*" | head -n1)'
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-alias config='/usr/bin/git --git-dir=$HOME/code/dotfiles/.git --work-tree=$HOME'
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 if [[ -d "$HOME/.sdkman/bin" ]]; then
