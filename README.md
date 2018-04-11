@@ -33,10 +33,10 @@ There are some usage caveats (like path completion) you might also want to disab
 
 ### todo
 
-- [ ] Make completion work with git-extras
+- [ ] Make completion work with git-extras
 
 
-### reference links
+### reference links
 
 - [https://github.com/dvidelabs/config](https://github.com/dvidelabs/config)
 - [https://news.ycombinator.com/item?id=11070797](https://news.ycombinator.com/item?id=11070797)
