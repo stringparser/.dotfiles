@@ -32,6 +32,6 @@ Reference links:
 - [https://news.ycombinator.com/item?id=11070797](https://news.ycombinator.com/item?id=11070797)
 - [https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
 
-# TODO
+# todo
 
 - [ ] Make completion work (like git-extras)
