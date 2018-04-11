@@ -1,4 +1,8 @@
-# setup
+# dotfiles
+
+A simpler setup to work with dotfiles.
+
+### setup
 
 Create a bare repo to track dotfiles.
 
@@ -27,11 +31,13 @@ config add .zshrc
 
 There are some usage caveats (like path completion) you might also want to disable showing untracked files.
 
-Reference links:
+### todo
+
+- [ ] Make completion work with git-extras
+
+
+### reference links
+
 - [https://github.com/dvidelabs/config](https://github.com/dvidelabs/config)
 - [https://news.ycombinator.com/item?id=11070797](https://news.ycombinator.com/item?id=11070797)
 - [https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
-
-# todo
-
-- [ ] Make completion work (like git-extras)
