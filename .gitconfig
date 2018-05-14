@@ -1,0 +1,7 @@
+[branch]
+	autosetuprebase = always
+[user]
+	name = Javier Carrillo Milla
+	email = stringparser@gmail.com
+[push]
+	default = current
