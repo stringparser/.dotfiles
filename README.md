@@ -33,7 +33,7 @@ There are some usage caveats (like path completion) you might also want to disab
 
 ### todo
 
-- [ ] Make completion work with git-extras
+- [X] Make completion work
 
 
 ### reference links

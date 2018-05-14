@@ -30,23 +30,9 @@ alias openUrlAndroid='adb shell am start -a android.intent.action.VIEW -d'
 alias typeTextAndroid='adb shell input text'
 # alias gulp='node $(find . -name "gulpfile.js" -not -path "./node_modules/*" | head -n1)'
 
-# when Android
-if [[ -d "$HOME/Library/Android" ]]; then
-  export ANDROID_HOME=$HOME/Library/Android/sdk
-  export PATH=$PATH:$ANDROID_HOME/tools
-  export PATH=$PATH:$ANDROID_HOME/platform-tools
-fi
-
-# when sbt
-if [[ -f $(which sbt) ]]; then
-  export SBT_OPTS="${SBT_OPTS} -Dsbt.jse.engineType=Node -Dsbt.jse.command=$(which node)"
-fi
-
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-if [[ -d "$HOME/.sdkman/bin" ]]; then
-  export SDKMAN_DIR="$HOME/.sdkman"
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
-fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bind to autocompletes
+complete -F dot _git
