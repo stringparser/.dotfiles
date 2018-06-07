@@ -36,3 +36,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # bind to autocompletes
 complete -F dot _git
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/jacami/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jacami/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/jacami/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jacami/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
