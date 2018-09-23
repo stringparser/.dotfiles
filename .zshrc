@@ -9,16 +9,23 @@ export UPDATE_ZSH_DAYS=30
 ZSH_THEME="dracula"
 
 # plugins
-plugins=(git nvm osx)
+plugins=(git nvm)
 
 # augment PATH
-PATH="/usr/local/bin:/usr/local/sbin:$HOME/Library/Python/3.6/bin:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/Library/Python/3.6/bin:$PATH"
+export PATH="$(echo /usr/local/opt/*/{sbin,bin} | xargs | tr ' ' ':'):$PATH"
+
+export EDITOR=vim
+
+# compilers
+export LDFLAGS="-L/usr/local/opt/php@5.6/lib -L/usr/local/opt/sqlite/lib -L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/php@5.6/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # includes
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
-# cusotmize prompt
-RPROMPT='$(whoami) %{$fg_bold[green]%}node-$(node -v)%{$reset_color%}'
 
 # aliases
 alias dot='/usr/bin/git --git-dir=$HOME/code/dotfiles --work-tree=$HOME'
@@ -30,9 +37,9 @@ alias openUrlAndroid='adb shell am start -a android.intent.action.VIEW -d'
 alias typeTextAndroid='adb shell input text'
 # alias gulp='node $(find . -name "gulpfile.js" -not -path "./node_modules/*" | head -n1)'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# phpbrew
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# phpbrew use 5.6.38
 
-# bind to autocompletes
-complete -F dot _git
+# customize prompt
+RPROMPT='$(whoami) %{$fg_bold[green]%}node-$(node -v)%{$reset_color%}'
